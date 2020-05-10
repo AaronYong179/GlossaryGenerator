@@ -1,5 +1,4 @@
 import xlrd
-import os
 import tkinter as Tk
 from tkinter import filedialog
 from pathlib import Path
@@ -66,9 +65,7 @@ class MainApp:
         self.run()
 
     def run(self):
-##        curr_dir = os.getcwd()
         input_dir = filedialog.askopenfilename(initialdir = "/", title = "Please select a file to convert to a glossary.")
-
         if not input_dir: return
         
         output_dir = filedialog.asksaveasfilename(initialdir = "/", \
