@@ -33,7 +33,7 @@ class GlossaryExporter:
         self.filepath = filepath
         self.glossary = glossary
         self.font_family = font_family
-        self.document = Document()
+        self.document = Document("./default.docx")
         self.format_docx()
         
     def format_docx(self):
@@ -66,11 +66,12 @@ class MainApp:
         self.run()
 
     def run(self):
-        curr_dir = os.getcwd()
-        input_dir = filedialog.askopenfilename(initialdir = curr_dir, title = "Please select a file to convert to a glossary.")
+##        curr_dir = os.getcwd()
+        input_dir = filedialog.askopenfilename(initialdir = "/", title = "Please select a file to convert to a glossary.")
+
         if not input_dir: return
         
-        output_dir = filedialog.asksaveasfilename(initialdir = curr_dir, \
+        output_dir = filedialog.asksaveasfilename(initialdir = "/", \
                                                   title = "Please select a folder to save the glossary.", \
                                                   initialfile = Path(input_dir).stem, \
                                                   defaultextension = ".docx", \
